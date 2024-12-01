@@ -1,0 +1,14 @@
+# encoding: utf-8
+
+patch:
+  switches/@next:
+    name: emoji_cantonese_suggestion
+    reset: 1
+    states: [ 冇Emoji, 有Emoji ]
+  'engine/filters/@before 0':
+    simplifier@emoji_cantonese_suggestion
+  emoji_cantonese_suggestion:
+    opencc_config: emoji_cantonese.json
+    option_name: emoji_cantonese_suggestion
+    tips: none
+    inherit_comment: false
